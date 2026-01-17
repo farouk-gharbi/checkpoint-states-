@@ -1,4 +1,5 @@
-
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import React from 'react';
 
 class Profile extends React.Component {
@@ -18,10 +19,15 @@ class Profile extends React.Component {
             <div>
                 <h1>count: {this.state.count }</h1>
                 <h1> My Profile</h1>
-                <h2>Full Name: {this.props.persone.Fullname}</h2>
-                <h2>Bio: {this.props.persone.Bio}</h2>
-                <h2>Profession: {this.props.persone.Profession}</h2>
-                <img src={this.props.persone.imagesrc} alt="Profile" />
+                 <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={this.props.persone.imagesrc} alt="Profile" />
+                    <Card.Body>
+                    <Card.Title>Full Name: {this.props.persone.Fullname}</Card.Title>
+                    <Card.Text >Bio: {this.props.persone.Bio}</Card.Text>
+                    <Card.Text>Profession: {this.props.persone.Profession}</Card.Text>
+                </Card.Body>
+                </Card>
+                
             </div>
         );
     }
